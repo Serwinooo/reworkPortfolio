@@ -1,0 +1,28 @@
+.intro-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.intro {
+    font-size: 1.25rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    text-align: center;
+}
+
+.intro span {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.intro::before {
+    content: ">";
+    color: #007bff;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.intro span {
+    margin-top: 0.5rem;
+}

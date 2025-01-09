@@ -1,0 +1,20 @@
+/* Limit the image height in the carousel */
+.carousel-inner img {
+    max-height: 500px; /* Adjust as needed */
+    object-fit: cover; /* Ensure the full image is visible */
+    border: 1px black solid;
+  }
+  
+  /* Customize slider buttons */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    border-radius: 50%; /* Rounded buttons */
+    padding: 10px; /* Increase size */
+  }
+  
+  .carousel-control-prev-icon:hover,
+  .carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Darker on hover */
+  }
+  

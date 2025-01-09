@@ -1,0 +1,25 @@
+/* Contact Form */
+#contact form .form-label {
+    font-weight: bold;
+  }
+  
+  #contact form .form-control {
+    border-radius: 0.375rem; /* Rounded borders for inputs */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); /* Soft shadow */
+  }
+  
+  #contact form textarea.form-control {
+    resize: vertical;
+  }
+  
+  #contact form .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+  }
+  
+  #contact form .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  

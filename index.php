@@ -1,3 +1,8 @@
+<?php
+// Assuming a user is logged in
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,27 +161,27 @@
             <h3>Social Media</h3>
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="https://github.com/your-github" target="_blank" class="text-dark">
+                <a href="https://github.com/Serwinooo" target="_blank" class="text-dark">
                   <i class="fab fa-github fa-2x"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="text-primary">
+                <a href="https://www.linkedin.com/in/cerwin-roxas-67b436250/" target="_blank" class="text-primary">
                   <i class="fab fa-linkedin fa-2x"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://twitter.com/your-twitter" target="_blank" class="text-info">
+                <a href="https://x.com/itsmecerwin" target="_blank" class="text-info">
                   <i class="fab fa-twitter fa-2x"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://www.tiktok.com/@your-tiktok" target="_blank" class="text-dark">
+                <a href="https://www.tiktok.com/@cennnnyyy" target="_blank" class="text-dark">
                   <i class="fab fa-tiktok fa-2x"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://www.instagram.com/your-instagram" target="_blank" class="text-danger">
+                <a href="https://www.instagram.com/crwnrxs/" target="_blank" class="text-danger">
                   <i class="fab fa-instagram fa-2x"></i>
                 </a>
               </li>
@@ -184,7 +189,7 @@
       
             <!-- Contact Form -->
             <h3 class="mt-5">Get in Touch</h3>
-            <form action="/submit" method="POST">
+            <form id="contactForm">
               <div class="mb-3">
                 <label for="fullName" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="fullName" name="fullName" required>
@@ -379,49 +384,71 @@
 
       <!-- Market Tab -->
       <div class="tab-pane fade" id="market" role="tabpanel" aria-labelledby="market-tab">
-      <section class="p-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Available Products for Sale</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+          <section class="p-5 bg-light">
+              <div class="container">
+                  <h2 class="text-center mb-5">Available Products for Sale</h2>
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                  <?php
+                  include 'src/include/db_connect.php';
 
-            <?php
-            include 'src/include/db_connect.php';
+                  // Check database connection
+                  if (!$conn) {
+                      die("Connection failed: " . mysqli_connect_error());
+                  }
 
-            // Check database connection
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
+                  $sql = "SELECT * FROM products";
+                  $result = mysqli_query($conn, $sql);
 
-            $sql = "SELECT * FROM products";
-            $result = mysqli_query($conn, $sql);
+                  // Check if products are available
+                  if (mysqli_num_rows($result) > 0) {
+                      while ($product = mysqli_fetch_assoc($result)) {
+                          echo '
+                          <div class="col">
+                              <div class="card h-100">
+                                  <img src="src/page/admin/images/products/' . $product['image'] . '" class="card-img-top" alt="' . $product['name'] . '">
+                                  <div class="card-body">
+                                      <h5 class="card-title">' . $product['name'] . '</h5>
+                                      <p class="card-text">' . $product['description'] . '</p>
+                                      <p class="card-text"><strong>$' . number_format($product['price'], 2) . '</strong></p>
+                                      <form action="src/page/503.html" method="POST">
+                                          <div class="mb-3">
+                                              <label for="quantity-' . $product['id'] . '" class="form-label">Quantity</label>
+                                              <input type="number" class="form-control" id="quantity-' . $product['id'] . '" name="quantity" min="1" value="1" required>
+                                          </div>
+                                          <input type="hidden" name="product_id" value="' . $product['id'] . '">
+                                          <button type="submit" class="btn btn-primary">Purchase</button>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                          ';
+                      }
+                  } else {
+                      echo "<p>No products available.</p>";
+                  }
 
-            // Check if products are available
-            if (mysqli_num_rows($result) > 0) {
-                while ($product = mysqli_fetch_assoc($result)) {
-                    echo '
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="src/page/admin/images/products/' . $product['image'] . '" class="card-img-top" alt="' . $product['name'] . '">
-                            <div class="card-body">
-                                <h5 class="card-title">' . $product['name'] . '</h5>
-                                <p class="card-text">' . $product['description'] . '</p>
-                                <p class="card-text"><strong>$' . number_format($product['price'], 2) . '</strong></p>
-                                <a href="#" class="btn btn-success">Add to Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    ';
-                }
-            } else {
-                echo "<p>No products available.</p>";
-            }
+                  mysqli_close($conn);
+                  ?>
+                  </div>
+              </div>
+          </section>
+      </div>
 
-            mysqli_close($conn);
-            ?>
-            </div>
-        </div>
-    </section>
-  </div>
+<!-- Chat Widget -->
+<div id="chat-widget" style="position: fixed; bottom: 20px; right: 20px; width: 300px;">
+    <div id="chat-header" style="background: #007bff; color: white; padding: 10px; cursor: pointer;">
+        <span>Chat with Admin</span>
+        <span id="chat-toggle" style="float: right;">&#x25BC;</span>
+    </div>
+    <div id="chat-body" style="background: white; height: 400px; display: none; border: 1px solid #007bff; overflow-y: auto;">
+        <div id="chat-messages" style="padding: 10px; height: 340px; overflow-y: auto;"></div>
+        <form id="chat-form" style="padding: 10px; border-top: 1px solid #007bff;">
+            <input type="text" id="chat-input" class="form-control" placeholder="Type a message..." required>
+            <button type="submit" class="btn btn-primary btn-sm mt-2">Send</button>
+        </form>
+    </div>
+</div>
+
 
 </div>
 
@@ -433,5 +460,12 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script src="main.js"></script>
+  <script src="src/scripts/contact.js"></script>
+  <!-- <script src="src/scripts/market.js"></script> -->
+
 </body>
-</html>
+</html

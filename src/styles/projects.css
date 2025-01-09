@@ -1,0 +1,54 @@
+ /* Limit the image height inside cards */
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover; /* Ensures the image fits nicely inside the card */
+  }
+  
+  /* Add spacing between images */
+.row.g-3 img {
+    border: 1px solid #ddd; /* Optional: Add a border */
+    padding: 5px;
+    background-color: #f8f9fa; /* Light background for images */
+  }
+  
+  
+  /* Completely hide inactive tab content */
+.tab-pane-proj {
+    display: none; /* Hide all tab content by default */
+    visibility: hidden; /* Prevent layout shift from hidden content */
+  }
+  
+.tab-pane-proj.active {
+    display: block; /* Only show the active tab content */
+    visibility: visible; /* Ensure active tab is visible */
+  }
+
+  
+  /* Wrapper for design images */
+.design-image-wrapper {
+    width: 100%; /* Full width of the column */
+    height: 260px; /* Fixed height for equal sizes */
+    overflow: hidden; /* Prevent overflow */
+    position: relative; /* Proper positioning */
+  }
+  
+  /* Image Styling */
+.design-image {
+    width: 100%; /* Fill the width of the wrapper */
+    height: 100%; /* Fill the height of the wrapper */
+    object-fit:contain; /* Prevent distortion, crop excess */
+    border-radius: 5px; /* Optional: Rounded corners */
+    transition: transform 0.3s ease-in-out; 
+  }
+  
+  /* Add hover effect */
+.design-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  /* Prevent footer from being affected */
+#designs {
+    margin-bottom: 3rem; /* Add space below the design gallery */
+  }
+  
+  

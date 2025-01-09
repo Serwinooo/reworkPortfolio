@@ -1,0 +1,80 @@
+c:/xampp/htdocs/vuePort/reworkPortfolio/
+├── database.sql
+├── index.php
+├── markets.php
+└── src/
+    ├── assets/
+    │   └── images/
+    ├── components/
+    ├── include/
+    │   └── db_connect.php
+    ├── page/
+    │   └── admin/
+    │       ├── add_product.php
+    │       ├── admin.php
+    │       └── images/
+    │           └── products/
+    │               ├── purepng.com-fishfish-981524646248khl3k.png
+    │               └── Screenshot_20241229_210226_Pocket Legends.jpg
+    ├── scripts/
+    │   └── main.js
+    ├── styles/
+    │   ├── about.css
+    │   ├── base.css
+    │   ├── certificates/
+    │   │   ├── Attendees.webp
+    │   │   ├── Certificate of Participation (33).webp
+    │   │   ├── Cerwin R.webp
+    │   │   ├── cerwinroxas17@gmail.com.webp
+    │   │   ├── Cerwin_Manzo_Roxas20240405-73-xqlvwu.webp
+    │   │   ├── CERWIN_ROXAS.webp
+    │   │   ├── e-cert-roxas-cerwin-66c3549b1c84c.webp
+    │   │   ├── ROXAS.webp
+    │   │   ├── ROXAS_WEB.webp
+    │   │   ├── so1.webp
+    │   │   ├── using-matlab-with-python-page-0001-66c3551d5dec3.webp
+    │   │   └── WEB-CERT-ROXAS.webp
+    │   ├── certificates.css
+    │   ├── contact.css
+    │   ├── home.css
+    │   ├── icon/
+    │   ├── img/
+    │   │   └── avatar.jpeg
+    │   ├── project-img/
+    │   │   ├── BDHBT1.png
+    │   │   ├── BLCK_BACK.png
+    │   │   ├── BLCK_FRONT.png
+    │   │   ├── cover.png
+    │   │   ├── F&B CPE.png
+    │   │   ├── FB CPE.png
+    │   │   ├── Front-1.png
+    │   │   ├── image1.png
+    │   │   ├── image2.png
+    │   │   ├── pfp (2).png
+    │   │   └── programs/
+    │   │       ├── calcu/
+    │   │       │   ├── Screenshot 2024-09-02 182447.png
+    │   │       │   └── Screenshot 2024-09-02 182447.webp
+    │   │       ├── invMgmt/
+    │   │       │   ├── invmgmt.png
+    │   │       │   └── invmgmt.webp
+    │   │       ├── musicPlayer/
+    │   │       │   ├── cover.png
+    │   │       │   ├── cover.webp
+    │   │       │   ├── Screenshot 2024-08-26 091727.png
+    │   │       │   ├── Screenshot 2024-09-02 162700.png
+    │   │       │   └── Screenshot 2024-09-02 162809.png
+    │   │       ├── notepadC/
+    │   │       │   ├── notepadc.jpg
+    │   │       │   └── notepadc.webp
+    │   │       ├── predNum/
+    │   │       │   ├── predictNum.jpg
+    │   │       │   └── predictNum.webp
+    │   │       ├── thesis/
+    │   │       │   ├── Thesis-MVM.jpg
+    │   │       │   └── Thesis-MVM.webp
+    │   │       └── vhdl/
+    │   │           ├── 385544829_888858999641040_159302047263431567_n.png
+    │   │           └── 386861738_1296717507653025_5316877998385460287_n.png
+    │   └── projects.css
+    └── treeDir

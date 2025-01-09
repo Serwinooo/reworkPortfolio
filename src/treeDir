@@ -1,0 +1,31 @@
+portfolio/
+│
+├── index.html                # Main HTML file
+├── styles/
+│   ├── style.css             # Custom CSS file
+│   ├── img/
+│       └── myWebIcon/        # Folder for favicon or site-specific icons
+│           └── cyydev-icon.png
+│       └── portfolio/        # Folder for portfolio-related images
+│           └── home.jpg
+│           └── about.jpg
+│           └── project1.png
+│           └── certificate1.png
+│           └── marketplace.png
+│
+├── scripts/
+│   ├── script.js             # Custom JavaScript file
+│
+├── assets/
+│   └── images/               # General image assets for the project
+│       └── contact.png
+│       └── header-banner.jpg
+│
+├── fonts/                    # (Optional) Include custom fonts here
+│   └── your-font-files.ttf
+│
+├── bootstrap/                # Bootstrap CSS & JS files (if hosted locally)
+│   └── bootstrap.min.css
+│   └── bootstrap.bundle.min.js
+│
+└── README.md                 # Project documentation (optional)
